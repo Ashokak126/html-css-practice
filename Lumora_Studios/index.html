@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumora Studios</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+    .header {
+      background-color: firebrick;
+      text-align: center;
+      padding: 30px 20px; 
+    }
+    nav {
+      background-color: rgb(66, 5, 5);
+      text-align: center;
+      padding: 16px;
+    }
+    nav span {
+      margin: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+      margin: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      flex: 1;
+      min-width: 600px;
+      max-width: 320px;
+    }
+    
+    .card img {
+      width: 540px;   
+      height: 250px;  
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 15px auto;
+      display: block;
+    }
+    .card h2 {
+      margin-bottom: 12px;
+      color: firebrick;
+    }
+    .card p {
+      margin-top: 15px;
+      line-height: 1.4;
+    }
+    .info-section {
+      background-color: #111;
+      margin: 30px;
+      padding: 25px;
+      border-radius: 12px;
+    }
+    .info-box h2 {
+      margin-bottom: 15px;
+      color: firebrick;
+    }
+    .info-box p {
+      margin: 6px 0;
+    }
+    blockquote {
+  background-color: white;
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 15px;
+  text-align: left;
+  font-style: italic;
+  margin-top: 20px;
+  border-radius: 6px; 
+}
+
+    footer {
+      background-color: rgb(29, 28, 28);
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+
+    }
+    footer h4{
+        margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Lumora Studios</h1>
+    <p>Watch Unlimited Movies Anytime</p>
+  </div>
+
+  <nav>
+    <span>Home</span>
+    <span>Movies</span>
+    <span>Series</span>
+    <span>Contact</span>
+  </nav>
+
+  <main>
+    <section class="container">
+      <div class="card">
+        <div class="card-info">
+          <h2>Avengers: Endgame</h2>
+          <img src="images/avangers-endgame.jpg" alt="Avengers: Endgame">
+          <p>Earth's Mightiest Heroes unite for the final battle to save the universe.</p>
+          <span>⭐⭐⭐⭐⭐</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-info">
+          <h2>Interstellar</h2>
+          <img src="images/Interstellar.jpg" alt="Interstellar">
+          <p>A breathtaking journey through space and time to save humanity.</p>
+          <span>⭐⭐⭐⭐⭐</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="info-section">
+    <div class="info-box">
+      <h2>Trending Movies</h2>
+      <p>✔ Avengers</p>
+      <p>✔ Interstellar</p>
+      <p>✔ Batman</p>
+      <p>✔ Spider-Man</p>
+      <blockquote>"Movies touch our hearts and inspire our imagination."</blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Lumora Studios</h2>
+    <p>🎬 Entertainment • Adventure • Action 🍿</p>
+    <h4>© 2026 Lumora-Studios. All Rights Reserved.</h4>
+  </footer>
+</body>
+</html>
