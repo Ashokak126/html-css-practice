@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHSTORE</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #e6f0ff;
+        }
+        .container{
+            width: 450px;
+            background: white;
+            margin: 40px auto ;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        
+        }
+        h1{
+            margin-bottom: 10px;
+            color: cornflowerblue;
+            text-align: center;
+        }
+        h3{
+            margin-bottom: 25px;
+            text-align: center;
+            color: gray;
+        }
+        p{
+            margin-top: 10px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color:dodgerblue;
+            color: white;
+            font-size: 15px;
+            border: 1px solid blue;
+            border-radius: 5px;
+            margin-top: 25px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TECHSTORE</h1>
+        <h3>Vendor Registration Portal</h3>
+
+        <form action="submit" method="post" novalidate>
+        <p>Vendor Name</p>
+        <input type="text" name=" Vendor Name" placeholder="Enter Vendor Password" required minlength="4" maxlength="20" autofocus>
+
+        <p>Password</p>
+        <input type="text" name="Password" placeholder="Enter Password" required minlength="6" maxlength="10">
+
+        <p>Business Email</p>
+        <input type="text" name="Business Email" placeholder="Enter Business Email" required>
+
+        <p>Company Website</p>
+        <input type="text" name="Company Website" placeholder="https://example.com">
+
+        <p>Search Products</p>
+        <input type="text" name="Search Products" placeholder="Search Products" list="products">
+         
+        <datalist id="products">
+            <option>Mobiles</option>
+            <option>Laptops</option>
+            <option>Headphones</option>
+            <option>Gaming</option>
+            <option>Acessories</option>
+        </datalist>
+
+        <p>Quantity</p>
+        <input type="text" name="Quantity" value="1" size="4">
+
+        <p>Vendor ID</p>
+        <input type="text" name="Vendor ID" value="TV1024" readonly>
+
+        <p>GST Number</p>
+        <input type="text" name="GST Number" value="29ABCDE1234F1Z5" disabled >
+
+        <button>Register Vendor</button>
+
+        </form>
+    </div>
+</body>
+</html>
