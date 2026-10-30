@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Registration</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FAF7F2;
+
+        }
+        .container{
+            width: 950px;
+            background: #ffffff;
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow:0px 10px 30px rgba(0,0,0,0.2);
+
+        }
+        .left{
+           background-color: chocolate;
+           width: 400px;
+           color: white;
+           text-align: center;
+           height: 850px;
+           
+           
+        }
+        .left img{
+            
+            height: 500px;
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            object-fit: cover;
+            
+
+            
+
+        }
+        .right{
+            background-color: white;
+            margin-left: 30px;
+        }
+        .right p{
+            font-weight: bold;
+        }
+        h1{
+            margin-top: 10px;
+        }
+        .left p{
+            margin-top: 30px;
+        }
+        input{
+            width: 130%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 15px;
+            margin: 2px;
+        }
+        h3{
+            margin: 20px;
+            color:chocolate;
+            font-size: 22px;
+            
+        }
+        button{
+            margin-top: 30px;
+            width: 130%;
+            color: white;
+            background-color: chocolate;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            padding: 13px;
+
+            
+        }
+        form p{
+           margin-top: 10px;
+           margin-bottom: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="left">
+             <img src="images/puppy.jpg" alt="Puppy" >
+             <h1>🐾 HAPPY PAWS</h1>
+             <p>Find Your Forever Friend ❤️</p>
+             <p>Love • Care • Adopt</p>
+         </div>
+         <div class="right">
+            <h3>Pet Adoption Registration</h3>
+            <form action="submit" method="POST" novalidate>
+                <p>Adopter Name</p>
+                <input type="text" name="Adopter Name" placeholder="Enter Your Name" required minlength="4" maxlength="15"  pattern="^[A-Z][a-z]{3,14}$" autofocus>
+
+                <p>Create Password</p>
+                <input type="text" name="Create Password" placeholder="Create Password" required minlength="6" maxlength="10" pattern="[A-Za-z0-9@#$]{8,15}">
+
+                <p>Email Address</p>
+                <input type="text" name="Email Address" placeholder="Enter Email" required >
+
+                <p>Instagram Profile</p>
+                <input type="text" name="Insta Profile" placeholder="https://instagram.com/username">
+
+                <p>Preferred Pet</p>
+                <input type="text" name="Preferred Pet" placeholder="Search Your Pet" list="PetType">
+
+                <datalist id="PetType">
+                    <option>Golden Retriever</option>
+                    <option>Labrador</option>
+                    <option>Beagle</option>
+                    <option>German Shepherd</option>
+                    <option>Persian Cat</option>
+                    <option>Rabbit</option>
+
+                </datalist>
+
+                <p>Home Size (Sq.ft)</p>
+                <input type="text" name="Home" value="800" >
+
+                <p>Application ID</p>
+                <input type="text" name="App ID" value="ADP2026" readonly>
+
+                <P>Application Status</P>
+                <input type="text" name="App Status" value="Pending Verification" disabled>
+            
+                <button>🐾 Adopt Now</button>
+            </form>
+          </div>
+    </div>
+</body>
+</html>
