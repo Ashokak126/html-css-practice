@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gym Membership Portal</title>
+    <style>
+       
+body {
+    background-color: #f8fafc;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+
+.container {
+    background-color: white;
+    width: 420px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+p {
+    font-weight: bold;
+    color: #334155;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-gender > div,
+.form-goals > div {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #334155;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+input[type="color"] {
+    width: 100%;
+    height: 12px;
+    
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+meter, progress {
+    width: 100%;
+    height: 20px;
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #16a34a;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.Reset {
+    background-color: #64748b;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️ Gym Membership Portal</h1>
+        <img src="images/Gym.jpg" alt="Gym">
+     <div>
+       <form action="./register.jsp" method="post">
+         <div class="form-box">
+            <p>Member Name</p>
+            <input type="text" 
+            name="name"
+            placeholder="Enter Explorer Name"
+            pattern="^[A-Z][a-z]{4,15}$" 
+            required
+            autofocus>
+         </div>
+         <div class="form-box">
+            <p>Password</p>
+            <input type="text" 
+            name="text"
+            placeholder="Enter Password"
+            pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[\W])[\w\W]{8,15}" 
+            required>
+         </div>
+         <div class="form-gender">
+            <p>Gender</p>
+            <div>
+                <input type="radio" name="gender">Male
+            </div>
+            
+            <div>
+                <input type="radio" name="gender">Female
+            </div>
+            
+            <div>
+                <input type="radio" name="gender">Other
+            </div>
+            
+        </div>
+            <div class="form-goals">
+                <p>Fitness Goals</p>
+                <div>
+                    <input type="checkbox" name="weight" >Weight Loss
+                </div>
+                <div>
+                    <input type="checkbox" name="Muscle">Muscle Gain
+                </div>
+                <div>
+                    <input type="checkbox" name="strength">Strength
+                </div>
+                <div>
+                    <input type="checkbox" name="Cardio">Cardio
+                </div>
+            </div>
+
+            <div class="form-plan">
+                <p>Membership Plan</p>
+                <select>
+                    <option>Select Plan</option>
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
+                    <option>Yearly</option>
+                  </select>
+
+            </div>
+            <div class="date">
+                <p>Joining Date</p>
+                <input type="date">
+
+            </div>
+            <div class="time">
+                <p>Workout Time</p>
+                <input type="time">
+            </div>
+            <div class="color">
+                <p>Theme Color</p>
+                <input type="color" name="color" value="#16A34A">
+
+            </div>
+            <div class="upload">
+                <p>Upload Medical Report</p>
+                <input type="file" accept=".jpg,.png,.pdf">
+
+            </div>
+            <div class="notes">
+                <p>Health Notes</p>
+                <textarea rows="5" placeholder="Enter Your health details...">
+                </textarea>
+            </div>
+            <P>BMI Meter</P>
+            <div class="meter">
+                <meter min=10 max=40 value="24" high="30" low="18"></meter>
+
+            </div>
+            <p>Registration Progress</p>
+            <div class="progress">
+                <progress max="100" value="70">BMI METER </progress>
+
+            </div>
+            <hr>
+            
+            <button type="button" class="button">Join Now</button>
+            
+            <button type="Reset" class="Reset">Reset</button>
+        </form>
+
+       </div>
+    </div>
+</body>
+</html>
