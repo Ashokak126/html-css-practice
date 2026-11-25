@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediCare Hospital</title>
+
+    <link rel="stylesheet" href="../node_modules copy/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f2f7;
+            color: #222;
+        }
+        .navbar {
+            background-color: blue;
+            color: white;
+            min-height: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .navbar h2 {
+            font-size: 27px;
+        }
+
+        .h-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .h-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .h-links a:hover {
+            color: lightblue;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 50px 30px;
+        }
+
+        .top1-sec {
+            flex: 1;
+        }
+
+        .top1-sec h1 {
+            font-size: 55px;
+            color: rgb(0, 94, 255);
+            margin-bottom: 25px;
+        }
+
+        .top1-sec p {
+            color: darkgrey;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .img-1 {
+            flex: 1;
+        }
+
+        .img-1 img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .book, .explore {
+            width: 210px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        .book {
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        .explore {
+            background-color: white;
+            color: blue;
+            border: 1px solid blue;
+        }
+
+        .book:hover {
+            background-color: darkblue;
+        }
+
+        .explore:hover {
+            background-color: blue;
+            color: white;
+        }
+        .our-ser, .our-doct {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            color: #3768f5;
+            font-size: 35px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            padding: 0 25px;
+            flex-wrap: wrap;
+        }
+
+        .emergency, .pharmacy, .ambulance {
+            width: 30%;
+            min-width: 250px;
+            min-height: 250px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0px 5px 15px lightgrey;
+        }
+
+        .services span {
+            font-size: 40px;
+        }
+
+        .emergency span {
+            color: red;
+        }
+
+        .pharmacy span {
+            color: green;
+        }
+
+        .ambulance span {
+            color: blue;
+        }
+
+        .services h2 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .services p {
+            color: grey;
+            margin-bottom: 20px;
+        }
+
+        .view-red, .view-green, .view-blue {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .view-red {
+            background-color: #d1434d;
+        }
+
+        .view-green {
+            background-color: green;
+        }
+
+        .view-blue {
+            background-color: #3768f5;
+        }
+
+        .view-red:hover, .view-green:hover, .view-blue:hover {
+            opacity: 0.8;
+        }
+        .doctors {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            padding: 0 25px;
+            flex-wrap: wrap;
+        }
+
+        .cardio, .denti, .neuro {
+            width: 30%;
+            min-width: 250px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px lightgrey;
+        }
+
+        .doctors img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .doctors h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .doctors p {
+            color: grey;
+            margin-bottom: 12px;
+        }
+
+        .ten-yr, .eight-yr, .senior {
+            display: inline-block;
+            font-size: 12px;
+            color: #3768f5;
+            background-color: #e8edff;
+            padding: 6px;
+            border-radius: 15px;
+        }
+        .hotline {
+            border: 1px solid #f1a5a5;
+            margin: 70px 23px;
+            min-height: 113px;
+            border-radius: 8px;
+            background-color: #f5d8dc;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hotline-content h2 {
+            color: #571919;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .hotline-content p {
+            font-size: 18px;
+        }
+
+        .call {
+            background-color: #c9414b;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            width: 155px;
+            height: 63px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .call:hover {
+            background-color: darkred;
+        }
+        .statistics {
+            margin-top: 130px;
+            text-align: center;
+        }
+
+        .statistics h2 {
+            color: #3768f5;
+            font-size: 40px;
+            margin-bottom: 75px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            margin: 0 23px;
+        }
+
+        .stat-card {
+            background-color: white;
+            width: 25%;
+            height: 198px;
+            border-radius: 25px;
+            box-shadow: 0px 10px 20px lightgrey;
+            padding-top: 45px;
+        }
+
+        .stat-card h1 {
+            font-size: 50px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .stat-card p {
+            font-size: 23px;
+        }
+
+        .blue {
+            color: #3768f5;
+        }
+
+        .green {
+            color: #50875f;
+        }
+
+        .red {
+            color: #d1434d;
+        }
+
+        .yellow {
+            color: #f5bd3e;
+        }
+        .appointment {
+            margin-top: 130px;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .appointment h2 {
+            color: #3768f5;
+            font-size: 40px;
+            margin-bottom: 70px;
+        }
+
+        .appointment form {
+            background-color: white;
+            width: 65%;
+            margin: auto;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0px 10px 20px lightgrey;
+        }
+
+        .appointment input,
+        .appointment select {
+            width: 100%;
+            height: 47px;
+            margin-bottom: 25px;
+            padding: 12px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+        }
+
+        .appointment-btn {
+            width: 100%;
+            height: 62px;
+            background-color: #3768f5;
+            color: white;
+            border: none;
+            border-radius: 35px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .appointment-btn:hover {
+            background-color: blue;
+        }
+        .footer {
+            background-color: #123b43;
+            color: white;
+            margin-top: 100px;
+            padding: 50px 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            padding-bottom: 40px;
+        }
+
+        .footer-box {
+            width: 33%;
+        }
+
+        .footer-box h2,
+        .footer-box h3 {
+            margin-bottom: 25px;
+        }
+
+        .footer-box p {
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        .footer-box a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 18px;
+        }
+
+        .footer-box a:hover {
+            color: lightblue;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-info span {
+            color: lightblue;
+            font-size: 18px;
+        }
+
+        .copyright {
+            border-top: 1px solid grey;
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 20px;
+        }
+
+        .copyright p {
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                height: auto;
+            }
+
+            .h-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .top1-sec h1 {
+                font-size: 38px;
+            }
+
+            .img-1 {
+                width: 100%;
+            }
+
+            .img-1 img {
+                height: auto;
+            }
+
+            .emergency, .pharmacy, .ambulance {
+                width: 45%;
+            }
+
+            .cardio, .denti, .neuro {
+                width: 45%;
+            }
+
+            .stats-container {
+                flex-wrap: wrap;
+            }
+
+            .stat-card {
+                width: 45%;
+            }
+
+            .appointment form {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-box {
+                width: 100%;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .top1-sec h1 {
+                font-size: 32px;
+            }
+
+            .book, .explore {
+                width: 100%;
+                margin: 8px 0;
+            }
+
+            .emergency, .pharmacy, .ambulance {
+                width: 100%;
+            }
+
+            .cardio, .denti, .neuro {
+                width: 100%;
+            }
+
+            .hotline {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                height: auto;
+            }
+
+            .hotline-content h2 {
+                font-size: 22px;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-card {
+                width: 100%;
+            }
+
+            .statistics h2,
+            .appointment h2 {
+                font-size: 30px;
+            }
+
+            .appointment {
+                padding: 15px;
+            }
+
+            .appointment form {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .footer {
+                padding: 35px 20px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <h2>
+                <span class="bi bi-hospital"></span>
+                MediCare
+            </h2>
+
+            <ul class="h-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <section class="hero" id="home">
+
+        <div class="top1-sec">
+
+            <h1>24/7 Healthcare <br> Services</h1>
+
+            <p>
+                Providing quality treatment with experienced doctors
+                and advanced medical facilities.
+                Your health is our priority.
+            </p>
+
+            <a href="#appointment">
+                <button class="book">Book Appointment</button>
+            </a>
+
+            <a href="#services">
+                <button class="explore">Explore Services</button>
+            </a>
+
+        </div>
+
+        <div class="img-1">
+
+            <img src="images/Hospital2.jpg" alt="Hospital">
+
+        </div>
+
+    </section>
+    <h2 class="our-ser" id="services">Our Services</h2>
+
+    <section class="services">
+
+        <div class="emergency">
+
+            <span class="bi bi-heartbreak-fill"></span>
+
+            <h2>Emergency</h2>
+
+            <p>24 Hours Emergency Care Available</p>
+
+            <button class="view-red">View More</button>
+
+        </div>
+
+
+        <div class="pharmacy">
+
+            <span class="bi bi-capsule"></span>
+
+            <h2>Pharmacy</h2>
+
+            <p>Medicines Available All Time</p>
+
+            <button class="view-green">View More</button>
+
+        </div>
+
+
+        <div class="ambulance">
+
+            <span class="bi bi-truck"></span>
+
+            <h2>Ambulance</h2>
+
+            <p>Fast Ambulance Services</p>
+
+            <button class="view-blue">View More</button>
+
+        </div>
+
+    </section>
+    
+    <h2 class="our-doct" id="doctors">Our Doctors</h2>
+
+    <section class="doctors">
+
+        <div class="cardio">
+
+            <img src="images/doctor1.jpg" alt="Doctor Akshaya">
+
+            <h2>
+                Dr. Akshaya
+                <span class="ten-yr">10 Years Exp</span>
+            </h2>
+
+            <p>Cardiologist</p>
+
+            <a href="#appointment">
+                <button class="view-blue">Book Now</button>
+            </a>
+
+        </div>
+
+
+        <div class="denti">
+
+            <img src="images/doctor2.jpg" alt="Doctor Manoj">
+
+            <h2>
+                Dr. Manoj
+                <span class="eight-yr">8 Years Exp</span>
+            </h2>
+
+            <p>Dentist</p>
+
+            <a href="#appointment">
+                <button class="view-blue">Book Now</button>
+            </a>
+
+        </div>
+
+
+        <div class="neuro">
+
+            <img src="images/doctor1.jpg" alt="Doctor Bharath">
+
+            <h2>
+                Dr. Bharath
+                <span class="senior">Senior</span>
+            </h2>
+
+            <p>Neurologist</p>
+
+            <a href="#appointment">
+                <button class="view-blue">Book Now</button>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="hotline">
+
+        <div class="hotline-content">
+
+            <h2>
+                <span class="bi bi-exclamation-triangle-fill"></span>
+                Emergency Hotline
+            </h2>
+
+            <p>Available 24×7 for critical care</p>
+
+        </div>
+
+        <a href="tel:+919876543210">
+            <button class="call">Call Now</button>
+        </a>
+
+    </section>
+
+
+    <section class="statistics">
+
+        <h2>Hospital Statistics</h2>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h1 class="blue">120+</h1>
+                <p>Doctors</p>
+            </div>
+
+            <div class="stat-card">
+                <h1 class="green">5000+</h1>
+                <p>Patients</p>
+            </div>
+
+            <div class="stat-card">
+                <h1 class="red">50+</h1>
+                <p>Departments</p>
+            </div>
+
+            <div class="stat-card">
+                <h1 class="yellow">24×7</h1>
+                <p>Emergency</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="appointment" id="appointment">
+
+        <h2>Book Appointment</h2>
+
+        <form>
+
+            <input type="text" placeholder="Patient Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <select required>
+                <option value="">Select Department</option>
+                <option>Cardiology</option>
+                <option>Dentistry</option>
+                <option>Neurology</option>
+                <option>Emergency</option>
+            </select>
+
+            <input type="date" required>
+
+            <button type="submit" class="appointment-btn">
+                Book Appointment
+            </button>
+
+        </form>
+
+    </section>
+
+
+     <footer class="footer" id="contact">
+
+        <div class="footer-container">
+            <div class="footer-box">
+
+                <h2>MediCare Hospital</h2>
+
+                <p>
+                    Providing world-class healthcare services
+                    with experienced doctors and advanced facilities.
+                    Your health is our priority.
+                </p>
+
+            </div>
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#doctors">Doctors</a>
+                <a href="#services">Services</a>
+                <a href="#appointment">Appointment</a>
+                <a href="#contact">Contact Us</a>
+
+            </div>
+            <div class="footer-box contact-info">
+
+                <h3>Contact Info</h3>
+
+                <p>
+                    <span class="bi bi-geo-alt-fill"></span>
+                    Hyderabad, Telangana
+                </p>
+
+                <p>
+                    <span class="bi bi-telephone-fill"></span>
+                    +91 9876543210
+                </p>
+
+                <p>
+                    <span class="bi bi-envelope-fill"></span>
+                    medicare@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+        <div class="copyright">
+
+            <p>
+                © 2026 MediCare Hospital | All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
